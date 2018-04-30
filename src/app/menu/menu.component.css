@@ -1,0 +1,41 @@
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 305%;
+  padding: 15px;
+}
+
+#logo{
+    display: block;
+   margin-left: -9%;
+    margin-right: auto;
+    margin-top: -30%;
+}
+
+.navbar-default{
+	background-color: #f8f8f8;
+}
+
+.navbar.custom { 
+	width: 100%; 
+	min-height: 50%;
+	margin: 0 auto;
+}
+
+.navbar-default .navbar-nav > .active > a {
+    color: #000;
+    background-color: #00a08e;
+}
+
+@media (max-width: 787px) {
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-top: 3px solid #00a08e;
+    border-left: 3px solid #00a08e;
+    border-bottom:3px solid #00a08e;
+    background: #fff;
+  }
+
+}
+
+/*#e7e7e7*/
