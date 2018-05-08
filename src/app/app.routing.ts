@@ -5,13 +5,14 @@ import { AboutComponent } from './about/about.component';
 import { MessageComponent } from './message/message.component';
 import { AppComponent } from './app.component';
 import { NotfoundComponent } from './notfound/notfound.component'
+import { DashboardComponent } from "./dashboard/dashboard.component";
 
 const APP_ROUTES: Routes = [
 	{ path: '', redirectTo: '/', pathMatch: 'full' },
 	{path: 'login', component: LoginComponent},
 	{path:'contact',component: MessageComponent},
 	{path: 'about', component: AboutComponent},
-	
+	{path:'dashboard', component:DashboardComponent},
 	{path: 'error', component: NotfoundComponent}
 ];
 

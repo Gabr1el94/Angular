@@ -6,11 +6,13 @@
   padding: 15px;
 }
 
-#logo{
+img#logo{
     display: block;
    margin-left: -9%;
     margin-right: auto;
-    margin-top: -30%;
+    margin-top: -9%;
+    height: 79px;
+width: 160px;
 }
 
 .navbar-default{
