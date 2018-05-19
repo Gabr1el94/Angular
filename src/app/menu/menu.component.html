@@ -7,14 +7,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" routerLink="/"><img src="assets/image/foto.png" id="logo" alt="Turismo City"/>
+        <a class="navbar-brand" routerLink="/" ><img src="assets/image/foto.png" (click)="goUrl()" id="logo" alt="Turismo City"/>
         </a>
       </div>
       <div id="navbar1" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a routerLink="/"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
-          <li><a routerLink="/about"><span class="glyphicon glyphicon-edit"></span>  About</a></li>
-          <li><a routerLink="/contact"><span class="glyphicon glyphicon-envelope"></span>  Contact</a></li>
+          <li><a routerLink="/" (click)="goUrl()" ><i class="fa fa-home"></i> Home</a></li>
+          <li><a routerLink="/about"><i class="fa fa-info"></i>  About</a></li>
+          <li><a routerLink="/contact"><i class="fa fa-envelope-o"></i> Contact</a></li>
         </ul>
       </div>
       <!--/.nav-collapse -->

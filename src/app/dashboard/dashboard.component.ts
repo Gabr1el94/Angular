@@ -14,7 +14,8 @@ export class DashboardComponent implements OnInit {
   name = 'anony';
 
   constructor(private router:Router,title: Title,private receive:AuthService) {
-      title.setTitle('Turismo City - ADM');
+       title.setTitle("Turismo City - ADM");
+     
    }
 
   ngOnInit() {
@@ -24,7 +25,7 @@ export class DashboardComponent implements OnInit {
 
   isValid(): boolean {
     if ((this.name != null)) {
-              return true;
+        return true;
       }else{
         this.router.navigate(['/']);
         return false;

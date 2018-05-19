@@ -7,14 +7,15 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
+  viewProviders: [Title],  
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
   
  
-  constructor(title: Title, private service: AuthService) {
-      title.setTitle('Turismo City - ADM');  
+  constructor(private router:Router,title: Title, private service: AuthService) {
+      title.setTitle('Turismo City');  
    }
 
   ngOnInit() {

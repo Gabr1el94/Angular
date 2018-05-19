@@ -17,7 +17,4 @@ export class AuthService {
    getUserLog(){
      return this.isLog;
    }
-
- 
-
 }

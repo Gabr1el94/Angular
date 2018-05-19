@@ -4,7 +4,6 @@ import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { MessageComponent } from './message/message.component';
 import { AppComponent } from './app.component';
-import { NotfoundComponent } from './notfound/notfound.component'
 import { DashboardComponent } from "./dashboard/dashboard.component";
 
 const APP_ROUTES: Routes = [
@@ -13,7 +12,6 @@ const APP_ROUTES: Routes = [
 	{path:'contact',component: MessageComponent},
 	{path: 'about', component: AboutComponent},
 	{path:'dashboard', component:DashboardComponent},
-	{path: 'error', component: NotfoundComponent}
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
