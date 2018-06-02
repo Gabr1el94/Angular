@@ -1,0 +1,76 @@
+<hr>
+<div class="container">
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Código:</th>
+          <th>Turístico:</th>
+          <th>Cidade:</th>
+          <th>Edição:</th>
+          <th>Remoção:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let turistico of turisticos; let i = index">
+
+      		<th scope="row">
+      			{{ i + 1 }}
+      		</th>
+      		
+      		<td>
+				    {{ turistico.nomeTur }}
+			    </td>
+
+          <td>
+            {{ turistico.city }}
+          </td>
+
+	         <td> 
+	         	<button type="button" class="btn btn-info" (click)="onEdit(i)"> <i class="fa fa-refresh" aria-hidden="true"></i>  Edit</button>
+	         </td>
+
+	         <td>
+	            <button type="button" class="btn btn-danger" (click)="onDelete(i)"> <i class="fa fa-minus-square" aria-hidden="true"></i>  Delete</button>
+	         </td>
+        </tr>
+      </tbody>
+    </table>
+     <div class="text-right">
+        <button type="submit" class="btn btn-primary" (click)="onNew()"> <i class="fa fa-plus" aria-hidden="true"></i>  New</button>
+    </div>
+<hr>
+<div class="regentry" *ngIf="showNew">
+  <form (ngSubmit)="onSave()" class="form-inline">
+  	
+    <div class="form-group row">
+          <label for="nomeTur-input" class="col-2 col-form-label">Nome Turístico:<span style="color: red">*</span><br/>
+  			<input type="text" [(ngModel)]="regModel.nomeTur" class="form-control" tabindex="1" name="nomeTur" id="nomeTur" placeholder="Nome Completo ...">
+  		</label>
+  	</div>
+  	<br/><br/>
+
+  	<div class="form-group row">
+          <label for="city-input" class="col-2 col-form-label">Cidade:<span style="color: red">*</span><br/>
+  		</label>
+
+      <select class="form-control" name="city" id="city" [(ngModel)]="regModel.city" class="select-option">
+            <option [value]="city">{{city}}</option>
+            <option class='city' *ngFor='let city of citys' [value]="city">{{city}}</option>
+      </select>
+
+  	</div>
+  	<br/><br/>
+
+  	<div class="form-group row">
+          <label for="file-input" class="col-2 col-form-label">Imagem:<span style="color: red">*</span><br/>
+  			<input type="file" tabindex="6" class="form-control" id="file" accept="image/png" />
+  		</label>
+  	</div>
+  <br/><br/>
+      
+      <button type="submit" (click)="onSave()" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> {{submitType}}</button>
+      
+      <button type="submit" class="btn btn-danger" (click)="onCancel()"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+  </form>
+</div>
+</div>

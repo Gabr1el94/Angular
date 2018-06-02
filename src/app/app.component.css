@@ -1,14 +1,19 @@
+*{
+	font-family: serif;
+}
+
 body{
 	margin: 0;
 	padding: 0;
 }
+
+
 
 /*Definindo tamanho original dos elementos*/
 img,
 embed,
 figure{
 	max-width: 100%;
-
 }
 
 /*Bordagem largura e altura determinado*/

@@ -1,4 +1,30 @@
 
-<p *ngIf="isValid()">
-  You are authenticated. Hello {{name}}
+<!--Begin Navigarion -->
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/dashboard">Turismo City - ADM</a>
+    </div>
+    
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <button type="button" class="btn btn-link navbar-btn" (click)="btnHot();"> <i class="fa fa-bed" aria-hidden="true"></i>  Hotelaria</button>
+        </li>
+          <li class="dropdown">
+          
+          <button type="button" class="btn btn-link navbar-btn" (click)="btnTur();"><i class="fa fa-map-marker"  aria-hidden="true"></i>  Turístico</button>
+
+          </li>
+              
+          <li>
+          <button type="button" class="btn btn-link navbar-btn" (click)="goUrl()"><i class="fa fa-sign-out" aria-hidden="true"></i>  Sair</button>
+          </li>
+    </ul>
+  </div>
+</nav> 
+<!-- End Navigation-->
+<p id="apt" *ngIf="isValid()">
+  Hello <strong>{{name}}</strong>
 </p>
+
+ <router-outlet></router-outlet>

@@ -9,19 +9,19 @@ import { Router } from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
 export class DashboardComponent implements OnInit {
 
   name = 'anony';
-
+  
   constructor(private router:Router,title: Title,private receive:AuthService) {
-       title.setTitle("Turismo City - ADM");
-     
+       title.setTitle("Turismo City"); 
    }
 
-  ngOnInit() {
+ngOnInit() {
     this.name = this.receive.user;
-    console.log("Usuário está logado?",this.receive.getUserLog());
-  }
+    console.log("Usuário está logado?",this.receive.getUserLog());  
+}
 
   isValid(): boolean {
     if ((this.name != null)) {
@@ -31,5 +31,17 @@ export class DashboardComponent implements OnInit {
         return false;
       }
   }
+  
+  goUrl():void {
+    window.location.href='/';
+  }
+
+  btnHot= function () {
+        this.router.navigate(['/dashboard/hotelaria']);
+  };
+
+  btnTur= function () {
+        this.router.navigate(['/dashboard/turistico']);
+  };
 
 }

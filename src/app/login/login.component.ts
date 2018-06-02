@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser'; 
 import { Router } from '@angular/router';
 import {AuthService} from '../auth.service';
+
 @Component({
   selector: 'app-login',
   viewProviders: [Title],  
@@ -27,6 +28,11 @@ export class LoginComponent implements OnInit {
     if (users == 'admin' && pass == 'admin') {
       this.user.setUserLog();
       this.router.navigate(['dashboard']);
+    }else{
+      window.alert("Login ou senha inválido!");
+      e.target.elements[1].value="";
+      e.target.elements[0].value="";
+      this.router.navigate(['login']);
     }
   }
 
