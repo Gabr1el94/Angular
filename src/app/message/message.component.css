@@ -1,0 +1,30 @@
+.wrapper {	
+	margin: auto;
+	padding: 10px;
+  	max-width: 420px;
+  	background-color: #fff;
+  	border: 1px solid rgba(0,0,0,0.1);  
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+img{
+	width: 400px;
+	height: 400px;
+}
+
+.midia{
+	font-weight: bold;
+	text-align: left;
+	font-size: 17px;
+}
+
+p{
+	text-align: left;
+	font-size: 20px;
+}
+
+#title{
+	font-weight: bold;
+
+}

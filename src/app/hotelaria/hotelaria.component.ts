@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient,HttpEvent } from '@angular/common/http';
+import { Http,Response } from '@angular/http';
 import { Router } from '@angular/router';
+import 'rxjs/add/operator/map';
 
 class Hotelaria{
 	constructor(
@@ -19,6 +20,9 @@ class Hotelaria{
   styleUrls: ['./hotelaria.component.css']
 })
 export class HotelariaComponent implements OnInit {
+
+  private apiUrl='http://localhost:8080/turisticos';
+  data:any={};
 
   hotelarias: Hotelaria[] = [];
   
@@ -39,11 +43,25 @@ export class HotelariaComponent implements OnInit {
       this.selectFile=<File>event.target.files[5];
   }
 
-  constructor(private router:Router,private http:HttpClient) {
+  constructor(private router:Router,private http:Http) {
         this.hotelarias.push(new Hotelaria('Johan Peter', '99.999.999/9999-99', 'johan@gmail.com', '(99)9999-9999', 'Recife'));
+        this.getDado();
+     this.getHotelarias();
   }
 
   ngOnInit() {
+  }
+
+  getDado(){
+      return this.http.get(this.apiUrl)
+      .map((res: Response)=>res.json)
+  }
+
+  getHotelarias(){
+    this.getDado().subscribe(data=>{
+       console.log(data);
+       this.data = data
+    })
   }
 
   onNew(){
@@ -60,9 +78,11 @@ export class HotelariaComponent implements OnInit {
 
 */
   onSave(){
-      if (this.submitType === 'Salvar') {         
+      if (this.submitType === 'Salvar') {   
+        window.alert("Hotelaria cadastrado com sucesso");      
         this.hotelarias.push(this.regModel);
       }else {
+              window.alert("Hotelaria atualizado com sucesso");
         this.hotelarias[this.selectedRow].nomeHot = this.regModel.nomeHot;
         this.hotelarias[this.selectedRow].cnpj = this.regModel.cnpj;
         this.hotelarias[this.selectedRow].email = this.regModel.email;
@@ -81,6 +101,7 @@ export class HotelariaComponent implements OnInit {
   }
 
   onDelete(index: number){
+    window.alert("Hotelaria removido com sucesso");
     this.hotelarias.splice(index, 1);
   }
 

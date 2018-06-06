@@ -5,7 +5,7 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import {AuthService} from './auth.service';
 import {GuardService} from './guard.service';
 
@@ -35,7 +35,7 @@ import { TuristicoComponent } from './turistico/turistico.component';
   imports: [
     BrowserModule,
     routing,
-    HttpClientModule,
+    HttpModule,
     FormsModule,
   ],
   providers: [AuthService,GuardService],

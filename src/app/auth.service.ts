@@ -11,7 +11,7 @@ export class AuthService {
 
    setUserLog(){
      this.isLog=true;
-     this.user = 'admin';
+     this.user = 'Administrator';
    }
 
    getUserLog(){

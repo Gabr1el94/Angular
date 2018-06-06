@@ -1,3 +1,4 @@
+   
 <hr>
 <div class="container">
 <table class="table table-striped">
@@ -16,7 +17,7 @@
       <tbody>
       	<tr *ngFor="let hotelaria of hotelarias; let i = index">
       		
-      		<th scope="row">
+      		<th scope="row" class="cod">
       			{{ i + 1 }}
       		</th>
 
@@ -58,33 +59,33 @@
 	<form (ngSubmit)="onSave()" class="form-inline">
 		<div class="form-group row">
 	        <label for="nomeHot-input" class="col-2 col-form-label">Hotelaria:<span style="color: red">*</span><br/>
-				<input type="text" tabindex="1" class="form-control" [(ngModel)]="regModel.nomeHot" tabindex="1" placeholder="Nome Completo ..." id="hotel" name="hotel" />
+				<input type="text" tabindex="1" class="form-control" [(ngModel)]="regModel.nomeHot" tabindex="1" required="true"  placeholder="Nome Completo ..." id="hotel" name="hotel" />
 			</label>
 		</div>
 	<br/><br/>
 		<div class="form-group row">
 	      <label for="cnpj-input" class="col-2 col-form-label">Cnpj:<span style="color: red">*</span><br/>
-				<input type="text" class="form-control" tabindex="2" [(ngModel)]="regModel.cnpj" name="cnpj" placeholder="99.999.999/9999-99" id="cpnj">
+				<input type="text" class="form-control" required="true" tabindex="2" [(ngModel)]="regModel.cnpj" name="cnpj" placeholder="99.999.999/9999-99" id="cpnj">
 		 </label>
 	    </div>
 	<br/><br/>
 		<div class="form-group row">
 	      <label for="fone-input" class="col-2 col-form-label"> Telefone:<span style="color: red">*</span><br/>
-				<input type="text"  class="form-control" tabindex="3" name="fone" [(ngModel)]="regModel.fone" placeholder="(99)99999-9999" id="fone" />
+				<input type="text"  class="form-control" tabindex="3" required="true" [(ngModel)]="regModel.fone" placeholder="(99)99999-9999" id="fone" name="fone" />
 		 </label>
 		</div>
 
 	<br/><br/>
 		<div class="form-group row">
 	       <label for="email-input" class="col-2 col-form-label"> Email:<span style="color: red">*</span><br/>
-				<input type="text" class="form-control" tabindex="4" [(ngModel)]="regModel.email" name="email" id="email" placeholder="mail@mail.com"> 
+				<input type="text" class="form-control" required="true" tabindex="4" [(ngModel)]="regModel.email" name="email" id="email" placeholder="mail@mail.com"> 
 			</label>
 		</div>
 	<br/><br/>
 	  <div class="form-group row">
         <label for="city-input" class="col-2 col-form-label">Cidade:<span style="color: red">*</span></label>
         	
-        <select class="form-control" name="city" id="city" [(ngModel)]="regModel.city" class="select-option">
+        <select class="form-control" required="true" name="city" id="city" [(ngModel)]="regModel.city" class="select-option">
         		<option [value]="city">{{city}}</option>
     			<option class='city' *ngFor='let city of citys' [value]="city">{{city}}</option>
 		</select>
@@ -92,7 +93,7 @@
 	<br/><br/>
 		<div class="form-group row">
 	       <label for="file-input" class="col-2 col-form-label">   Imagem:<span style="color: red">*</span><br/><br/>
-				<input type="file" class="form-control" tabindex="6" (change)="onFileUpload($event)"  id="file" accept="image/png" /> 
+				<input type="file" class="form-control" required="true" tabindex="6" (change)="onFileUpload($event)"  id="file" accept="image/png" /> 
 		   </label>
 		</div>
 		<br/><br/>
@@ -101,3 +102,7 @@
 	</form>
 </div>
 </div>
+<br>
+<br>
+<br>
+<br>

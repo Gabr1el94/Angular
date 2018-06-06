@@ -1,0 +1,15 @@
+.tc-sub2{
+	color:#FFA500;
+    font-weight: bold;
+}
+
+.text{
+	color: #fff;
+	text-align: justify;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.col-md-6{
+	bottom: 30px;
+}

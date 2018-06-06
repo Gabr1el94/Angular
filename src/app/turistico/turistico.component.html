@@ -13,7 +13,7 @@
       <tbody>
         <tr *ngFor="let turistico of turisticos; let i = index">
 
-      		<th scope="row">
+      		<th scope="row" class="cod">
       			{{ i + 1 }}
       		</th>
       		
@@ -44,7 +44,7 @@
   	
     <div class="form-group row">
           <label for="nomeTur-input" class="col-2 col-form-label">Nome Turístico:<span style="color: red">*</span><br/>
-  			<input type="text" [(ngModel)]="regModel.nomeTur" class="form-control" tabindex="1" name="nomeTur" id="nomeTur" placeholder="Nome Completo ...">
+  			<input type="text" [(ngModel)]="regModel.nomeTur" class="form-control" required="true" tabindex="1" name="nomeTur" id="nomeTur" placeholder="Nome Completo ...">
   		</label>
   	</div>
   	<br/><br/>
@@ -53,7 +53,7 @@
           <label for="city-input" class="col-2 col-form-label">Cidade:<span style="color: red">*</span><br/>
   		</label>
 
-      <select class="form-control" name="city" id="city" [(ngModel)]="regModel.city" class="select-option">
+      <select required="true" class="form-control" name="city" id="city" [(ngModel)]="regModel.city" class="select-option">
             <option [value]="city">{{city}}</option>
             <option class='city' *ngFor='let city of citys' [value]="city">{{city}}</option>
       </select>
@@ -63,8 +63,8 @@
 
   	<div class="form-group row">
           <label for="file-input" class="col-2 col-form-label">Imagem:<span style="color: red">*</span><br/>
-  			<input type="file" tabindex="6" class="form-control" id="file" accept="image/png" />
   		</label>
+      <input type="file" class="form-control" tabindex="6" required="true" (change)="onChange($event)"  id="file" accept="image/png" /> 
   	</div>
   <br/><br/>
       
@@ -74,3 +74,6 @@
   </form>
 </div>
 </div>
+<br>
+<br>
+<br>
