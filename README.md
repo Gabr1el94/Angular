@@ -44,7 +44,7 @@
 
      
 **Config 3**: Entrando e habilitar o servidor </br>
-    ```cd my-app
+    ```cd my-app <br>
        ng serve --open(abre automaticamente o seu browser padrão)
     ```
      
