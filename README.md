@@ -6,7 +6,7 @@
   - Instalação Node e NPM;
   - Conhecimento JS e TS;
  
-#Instalação Angular:
+#Instalação Angular: </br>
   Antes de realizar à instalação no angular, é necessário instalar NODE e NPM, cujo são essenciais para criação de um projeto da plataforma.
 
 - **Windows**:
